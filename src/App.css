@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+}
+
+.horizontal-list::-webkit-scrollbar{
+
+    width: 0 !important;
+}
+.carousel .thumbs-wrapper {
+    margin: 20px;
+    overflow: hidden;
+    display: none;
+}
+
+.header-chip-div>.header-chip:not(:last-child){
+    margin-right: 8px ;
+}
