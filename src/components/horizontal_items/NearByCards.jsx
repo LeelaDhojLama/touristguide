@@ -27,9 +27,9 @@ export default function NearByCard(props){
     return <Card className={classes.root}>
         <CardMedia
             className={classes.media}
-            image="https://limetray.com/blog/wp-content/uploads/2020/01/steel-011Lead-1200x800.jpg"/>
+            image={props.data.image}/>
             <Typography style={{padding:8}} component="h5" variant="h5">
-                New Cafe
+                {props.data.title}
             </Typography>
     </Card>
 }

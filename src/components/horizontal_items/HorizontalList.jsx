@@ -10,8 +10,6 @@ const flexContainer = {
     display: 'flex',
     flexDirection: 'row',
     padding: 0,
-    marginLeft: 20,
-    marginRight: 20,
     overflowY: "scroll",
     width: "100%"
 };
@@ -31,7 +29,7 @@ export default function HorizontalList(props) {
                             width: props.type === "audio" ? "auto" : "60%",
                             paddingLeft: 0
                         }}>
-                            {displayCard(props.type)}
+                            {displayCard(props,data)}
                         </ListItem>
                     );
                 })
@@ -41,15 +39,15 @@ export default function HorizontalList(props) {
     </React.Fragment>
 }
 
-const displayCard = (type) => {
+const displayCard = (props,data) => {
 
-    switch (type) {
+    switch (props.type) {
         case "audio":
-            return <AudioCard/>;
+            return <AudioCard data={data} onClick={props.onCardClick}/>;
         case "video":
-            return <VideoCard/>
+            return <VideoCard data={data}/>
         case "nearby":
-            return <NearByCard/>
+            return <NearByCard data={data} />
         default:
             return "";
 

@@ -1,15 +1,89 @@
 {
-  "introduction": "",
-  "video": [
+  "introduction": "Introduction",
+  "audio": "Audio",
+  "video": "Video",
+  "old_photos": "Old Photos",
+  "review_rating": "Reviews and Rating",
+  "nearby": "Nearby",
+  "hotel_title": "Hotels",
+  "cafe_title": "Cafes",
+  "introduction_text": "Boudhanath is a Buddhist religious site, or a stupa, located in Kathmandu, Nepal. It's actually the largest and most sacred Tibetan Buddhist site outside of Tibet itself. ... According to Buddhist tradition, this site is said to hold the remains of the Kassapa Buddha, the 27th of the named Buddhas.",
+  "videos": [
     {
-      "title": "",
-      "source": ""
+      "id": 1,
+      "title": "Introduction",
+      "thumbnail": "https://img.youtube.com/vi/xz8w31Xeuvk/0.jpg",
+      "source": "https://www.youtube.com/embed/xz8w31Xeuvk"
+    },
+    {
+      "id": 2,
+      "title": "BOUDHA STUPA Kathmandu Nepal Aerial View",
+      "thumbnail": "https://img.youtube.com/vi/c_vqAIOT-9U/0.jpg",
+      "source": "https://www.youtube.com/embed/c_vqAIOT-9U"
+    },{
+      "id": 3,
+      "title": "BOUDHA STUPA Kathmandu Nepal Aerial View",
+      "thumbnail": "https://img.youtube.com/vi/W5ni-a_YhdU/0.jpg",
+      "source": "https://www.youtube.com/embed/W5ni-a_YhdU"
     }
   ],
-  "audio": [
+  "audios": [
     {
-      "title": "",
-      "source": ""
+      "title": "Introduction",
+      "source": "/assets/audio/en/introduction.mp3"
+    },
+    {
+      "title": "History",
+      "source": "/assets/audio/en/history.mp3"
+    },
+    {
+      "title": "News",
+      "source": "/assets/audio/en/news.mp3"
+    }
+  ],
+  "nearBy":
+    {
+      "hotels":[
+        {
+          "image": "https://www.bouddhaboutiquehotel.com/images/gallery/galleryimages/pgkZ2-bbh.jpg",
+          "title": "Bouddha Boutique Hotel"
+        },
+        {
+          "image": "https://pix10.agoda.net/hotelImages/519/51981/51981_17062110500053921656.jpg?s=450x450",
+          "title": "Bouddha Stupa Hotel"
+        },
+        {
+          "image": "https://cdn1.goibibo.com/voy_ing/t_g/9d0620a882ff11e7bc96025f77df004f.jpg",
+          "title": "Siddartha Hotel"
+        }
+      ],
+      "cafes":[
+        {
+          "image": "https://www.experienceearthtravel.com/assets/Uploads/or2k-best-restaurant-kathmandu2.jpg",
+          "title": "RoadSide Cafe"
+        },
+        {
+          "image": "https://fulltimeexplorer.com/wp-content/uploads/2018/08/Best-Restaurants-in-Kathmandu-Social-Cafe-1.jpg",
+          "title": "A-One Cafe"
+        },
+        {
+          "image": "https://media-cdn.tripadvisor.com/media/photo-s/07/8f/77/ac/getlstd-property-photo.jpg",
+          "title": "French Cafe"
+        }
+      ]
+    },
+  "reviews": [
+    {
+      "review": "Calming. Centering. Spiritual. Found myself quietly reflecting and giving thanks for the life lived and its many blessings that had me in Nepal spinning the prayer wheels slowly.",
+      "rating": "4"
+    },
+    {
+      "review": "Awesome place to be in kathmandu. Can go there and get inner peace, make sure to keep physical distance, be safe during COVID times",
+      "rating": "5"
+    },
+    {
+      "review": "One of the best place for photography, can enjoy easily and no need to pay any cost if your are nepali. #Peace",
+      "rating": "5"
     }
   ]
 }

@@ -37,10 +37,10 @@ export default function VideoCard(props){
 
     const classes = useStyles();
 
-    return <Card component={Link} to="video"  className={classes.root}>
+    return <Card component={Link} to={'/video/'+props.data.id}  className={classes.root}>
         <CardMedia
             className={classes.media}
-            image="https://img.youtube.com/vi/z79M2ILZdg4/0.jpg" // Reqiured
+            image={props.data.thumbnail} // Reqiured
         />
     </Card>
 }

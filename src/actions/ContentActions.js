@@ -20,7 +20,7 @@ function getIntroduction() {
         //         }
         //     );
     };
-    function request(content) { return { type: contentConstants.GET_INTRODUCTION, content } }
+    function request(content) { return { type: contentConstants.GET_INTRODUCTION } }
     function success(content) { return { type: contentConstants.SUCCESS_INTRODUCTION, content } }
     function failure(error) { return { type: contentConstants.FAILURE_INTRODUCTION, error } }
 }

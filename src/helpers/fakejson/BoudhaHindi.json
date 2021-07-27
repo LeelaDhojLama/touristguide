@@ -1,0 +1,89 @@
+{
+  "introduction": "परिचय",
+  "audio": "ऑडियो",
+  "video": "वीडियो",
+  "old_photos": "पुरानी तस्वीरें",
+  "review_rating": "समीक्षाएं और रेटिंग",
+  "nearby": "पास ही",
+  "hotel_title": "होटल",
+  "cafe_title": "कैफे",
+  "introduction_text": "बौद्धनाथ नेपाल के काठमांडू में स्थित एक बौद्ध धार्मिक स्थल या स्तूप है। यह वास्तव में तिब्बत के बाहर सबसे बड़ा और सबसे पवित्र तिब्बती बौद्ध स्थल है। ... बौद्ध परंपरा के अनुसार, कहा जाता है कि इस स्थल में बुद्धों के 27वें कस्पा बुद्ध के अवशेष हैं।",
+  "videos": [
+    {
+      "id": 1,
+      "title": "परिचय",
+      "thumbnail": "https://img.youtube.com/vi/xz8w31Xeuvk/0.jpg",
+      "source": "https://www.youtube.com/embed/xz8w31Xeuvk"
+    },
+    {
+      "id": 2,
+      "title": "बौद्ध स्तूप काठमांडू नेपाल हवाई दृश्य",
+      "thumbnail": "https://img.youtube.com/vi/c_vqAIOT-9U/0.jpg",
+      "source": "https://www.youtube.com/embed/c_vqAIOT-9U"
+    },{
+      "id": 3,
+      "title": "बौद्ध स्तूप काठमांडू नेपाल हवाई दृश्य",
+      "thumbnail": "https://img.youtube.com/vi/W5ni-a_YhdU/0.jpg",
+      "source": "https://www.youtube.com/embed/W5ni-a_YhdU"
+    }
+  ],
+  "audios": [
+    {
+      "title": "परिचय",
+      "source": "/assets/audio/en/introduction.mp3"
+    },
+    {
+      "title": "इतिहास",
+      "source": "/assets/audio/en/history.mp3"
+    },
+    {
+      "title": "समाचार",
+      "source": "/assets/audio/en/news.mp3"
+    }
+  ],
+  "nearBy":
+  {
+    "hotels":[
+      {
+        "image": "https://www.bouddhaboutiquehotel.com/images/gallery/galleryimages/pgkZ2-bbh.jpg",
+        "title": "Bouddha Boutique Hotel"
+      },
+      {
+        "image": "https://pix10.agoda.net/hotelImages/519/51981/51981_17062110500053921656.jpg?s=450x450",
+        "title": "Bouddha Stupa Hotel"
+      },
+      {
+        "image": "https://cdn1.goibibo.com/voy_ing/t_g/9d0620a882ff11e7bc96025f77df004f.jpg",
+        "title": "Siddartha Hotel"
+      }
+    ],
+    "cafes":[
+      {
+        "image": "https://www.experienceearthtravel.com/assets/Uploads/or2k-best-restaurant-kathmandu2.jpg",
+        "title": "RoadSide Cafe"
+      },
+      {
+        "image": "https://fulltimeexplorer.com/wp-content/uploads/2018/08/Best-Restaurants-in-Kathmandu-Social-Cafe-1.jpg",
+        "title": "A-One Cafe"
+      },
+      {
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/07/8f/77/ac/getlstd-property-photo.jpg",
+        "title": "French Cafe"
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "review": "शांत करने वाला। केन्द्रित करना। आध्यात्मिक। अपने आप को चुपचाप प्रतिबिंबित करते हुए और जीवन जीने के लिए धन्यवाद देते हुए पाया और इसके कई आशीर्वादों ने मुझे नेपाल में प्रार्थना के पहियों को धीरे-धीरे घुमाया।",
+      "rating": "4"
+    },
+    {
+      "review": "\nकाठमांडू में रहने के लिए बहुत बढ़िया जगह। वहां जा सकते हैं और आंतरिक शांति प्राप्त कर सकते हैं, शारीरिक दूरी रखना सुनिश्चित करें, COVID समय के दौरान सुरक्षित रहें",
+      "rating": "5"
+    },
+    {
+      "review": "फोटोग्राफी के लिए सबसे अच्छी जगह में से एक, आसानी से आनंद ले सकता है और अगर आप नेपाली हैं तो कोई कीमत चुकाने की जरूरत नहीं है। #शांति",
+      "rating": "5"
+    }
+  ]
+}

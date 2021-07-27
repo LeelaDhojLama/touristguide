@@ -1,15 +1,89 @@
 {
-    "introduction": "",
-    "video": [
+    "introduction": "序章",
+    "audio": "オーディオ",
+    "video": "ビデオ",
+    "old_photos": "古い写真",
+    "review_rating": "レビューと評価",
+    "nearby": "近く",
+    "hotel_title": "ホテル",
+    "cafe_title": "カフェ",
+    "introduction_text": "\nBoudhanathは、ネパールのカトマンズにある仏教の宗教的な場所、または仏舎利塔です。それは実際にはチベット自体の外で最大かつ最も神聖なチベット仏教の場所です。 ...仏教の伝統によると、この場所には、名前の付いた仏の27番目である迦葉仏の遺跡があると言われています。",
+    "videos": [
+        {
+            "id": 1,
+            "title": "序章",
+            "thumbnail": "https://img.youtube.com/vi/xz8w31Xeuvk/0.jpg",
+            "source": "https://www.youtube.com/embed/xz8w31Xeuvk"
+        },
+        {
+            "id": 2,
+            "title": "BOUDHASTUPAカトマンズネパール航空写真",
+            "thumbnail": "https://img.youtube.com/vi/c_vqAIOT-9U/0.jpg",
+            "source": "https://www.youtube.com/embed/c_vqAIOT-9U"
+        },{
+            "id": 3,
+            "title": "BOUDHASTUPAカトマンズネパール航空写真",
+            "thumbnail": "https://img.youtube.com/vi/W5ni-a_YhdU/0.jpg",
+            "source": "https://www.youtube.com/embed/W5ni-a_YhdU"
+        }
+    ],
+    "audios": [
+        {
+            "title": "序章",
+            "source": "/assets/audio/en/introduction.mp3"
+        },
+        {
+            "title": "歴史",
+            "source": "/assets/audio/en/history.mp3"
+        },
+        {
+            "title": "ニュース",
+            "source": "/assets/audio/en/news.mp3"
+        }
+    ],
+    "nearBy":
     {
-        "title": "",
-        "source": ""
-    }
-],
-    "audio": [
-    {
-        "title": "",
-        "source": ""
-    }
-]
+        "hotels":[
+            {
+                "image": "https://www.bouddhaboutiquehotel.com/images/gallery/galleryimages/pgkZ2-bbh.jpg",
+                "title": "Bouddha Boutique Hotel"
+            },
+            {
+                "image": "https://pix10.agoda.net/hotelImages/519/51981/51981_17062110500053921656.jpg?s=450x450",
+                "title": "Bouddha Stupa Hotel"
+            },
+            {
+                "image": "https://cdn1.goibibo.com/voy_ing/t_g/9d0620a882ff11e7bc96025f77df004f.jpg",
+                "title": "Siddartha Hotel"
+            }
+        ],
+        "cafes":[
+            {
+                "image": "https://www.experienceearthtravel.com/assets/Uploads/or2k-best-restaurant-kathmandu2.jpg",
+                "title": "RoadSide Cafe"
+            },
+            {
+                "image": "https://fulltimeexplorer.com/wp-content/uploads/2018/08/Best-Restaurants-in-Kathmandu-Social-Cafe-1.jpg",
+                "title": "A-One Cafe"
+            },
+            {
+                "image": "https://media-cdn.tripadvisor.com/media/photo-s/07/8f/77/ac/getlstd-property-photo.jpg",
+                "title": "French Cafe"
+            }
+        ]
+    },
+    "reviews": [
+        {
+            "review": "落ち着く。センタリング。スピリチュアル。ネパールで私がゆっくりとマニ車を回してくれた人生とその多くの祝福に静かに反省し、感謝していることに気づきました。",
+            "rating": "4"
+        },
+        {
+            "review": "カトマンズにある素晴らしい場所。そこに行って心の平安を得ることができ、物理的な距離を保ち、COVIDの時期に安全であることを確認してください",
+            "rating": "5"
+        },
+        {
+            "review": "写真撮影に最適な場所の1つで、簡単に楽しむことができ、ネパール人であれば費用を支払う必要はありません。 ＃平和",
+            "rating": "5"
+        }
+    ]
 }

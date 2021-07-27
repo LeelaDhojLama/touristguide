@@ -8,7 +8,7 @@ function App() {
   return (
       <Router>
         <Switch>
-          <Route exact path="/video" component={VideoPlayerPage}/>
+          <Route exact path="/video/:id" component={VideoPlayerPage}/>
           <Route path="" component={HomePage}/>
         </Switch>
       </Router>

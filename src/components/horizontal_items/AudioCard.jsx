@@ -34,8 +34,8 @@ export default function AudioCard(props){
         <Chip
             style={{backgroundColor:"white"}}
             avatar={<PlayArrowIcon/>}
-            label="Introduction Boudha"
-            onClick={handleDelete}
+            label={props.data.title}
+            onClick={(e)=>props.onClick(props.data.source)}
         />
     </Card>
 }
