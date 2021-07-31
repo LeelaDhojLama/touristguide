@@ -30,15 +30,15 @@
   "audios": [
     {
       "title": "Introduction",
-      "source": "/assets/audio/en/introduction.mp3"
+      "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
     },
     {
       "title": "History",
-      "source": "/assets/audio/en/history.mp3"
+      "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
     },
     {
       "title": "News",
-      "source": "/assets/audio/en/news.mp3"
+      "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
     }
   ],
   "nearBy":

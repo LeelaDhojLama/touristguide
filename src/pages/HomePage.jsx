@@ -8,7 +8,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import HorizontalList from "../components/horizontal_items/HorizontalList";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
-import {VolumeDown} from "@material-ui/icons";
+import {VolumeDown, VolumeMute} from "@material-ui/icons";
 import {useSpeechSynthesis} from 'react-speech-kit';
 import Chip from "@material-ui/core/Chip";
 import {useDispatch, useSelector} from "react-redux";
@@ -77,17 +77,17 @@ const photos = [
 
 const languageData = [
     {
-        title:"English",
+        title: "English",
         language: "en",
         flag: "https://cdn.britannica.com/79/4479-050-6EF87027/flag-Stars-and-Stripes-May-1-1795.jpg"
     },
     {
-        title:"Hindi",
+        title: "Hindi",
         language: "hi",
         flag: "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png"
     },
     {
-        title:"Japanese",
+        title: "Japanese",
         language: "jp",
         flag: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/1200px-Flag_of_Japan.svg.png"
     },
@@ -97,16 +97,17 @@ export default function HomePage() {
 
     const classes = useStyles();
     const [audio, setAudio] = useState('')
-    const [voiceIndex] = useState(7);
+    const [listening, setListening] = useState(false)
+    const [voiceIndex, setVoiceIndex] = useState(49);
     const [activeChip, setActiveChip] = useState("introduction");
     const [activeBottomSheetAction, setActiveBottomSheetAction] = useState("");
-    const {speak, voices} = useSpeechSynthesis();
+    const {speak, stop, speaking, voices} = useSpeechSynthesis();
     const voice = voices[voiceIndex] || null;
 
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
-    const openLightbox = useCallback((event, { photo, index }) => {
+    const openLightbox = useCallback((event, {photo, index}) => {
         setCurrentImage(index);
         setViewerIsOpen(true);
     }, []);
@@ -121,12 +122,23 @@ export default function HomePage() {
 
     useEffect(() => {
         dispatch(contentActions.getIntroduction());
-        console.log(content);
+        onLanguageChange();
     }, []);
+
+    const onLanguageChange = () => {
+        if (localStorage.getItem("language") === "en") {
+            setVoiceIndex(49);
+        } else if (localStorage.getItem("language") === "hi") {
+            setVoiceIndex(55);
+        } else if (localStorage.getItem("language") === "jp") {
+            setVoiceIndex(58);
+        }
+    }
 
     const onAudioClick = (source) => {
         setAudio(source);
-        handleActiveBottomSheetAction(source);
+        console.log(audio);
+        handleActiveBottomSheetAction("audio");
     }
 
     const handleActiveBottomSheetAction = (active) => {
@@ -135,6 +147,13 @@ export default function HomePage() {
 
     const handleLanguageSelection = (language) => {
         localStorage.setItem("language", language);
+        if (localStorage.getItem("language") === "en") {
+            setVoiceIndex(49);
+        } else if (localStorage.getItem("language") === "hi") {
+            setVoiceIndex(55);
+        } else if (localStorage.getItem("language") === "jp") {
+            setVoiceIndex(58);
+        }
         dispatch(contentActions.getIntroduction());
     }
 
@@ -171,7 +190,8 @@ export default function HomePage() {
                       color={activeChip === "introduction" ? "primary" : "default"} className="header-chip"
                       label={content.placeDetails.introduction}/>
                 <Chip onClick={(e) => handleCheapSelect("nearby")}
-                      color={activeChip === "nearby" ? "primary" : "default"} className="header-chip" label={content.placeDetails.nearby}/>
+                      color={activeChip === "nearby" ? "primary" : "default"} className="header-chip"
+                      label={content.placeDetails.nearby}/>
                 <Chip onClick={(e) => handleCheapSelect("review")}
                       color={activeChip === "review" ? "primary" : "default"} className="header-chip"
                       label={content.placeDetails.review_rating}/>
@@ -185,13 +205,18 @@ export default function HomePage() {
                         Boudhanath
                     </Typography>
                     <div className="icons">
-                        <VolumeDown onClick={() => speak({text: "Hello", voice: voice})}
+                        {
+                            listening ? <VolumeMute onClick={() => stop}
+                                                    style={{marginRight: 8}}/> :
+                                <VolumeDown
+                                    onClick={() => speak({text: content.placeDetails.introduction_text, voice: voice})}
                                     style={{marginRight: 8}}/>
+                        }
                         <TranslateIcon onClick={(e) => handleActiveBottomSheetAction("language")}/>
                     </div>
 
                 </div>
-                <Typography style={{marginBottom:24}} align={"justify"} variant="body1" component="p">
+                <Typography style={{marginBottom: 24}} align={"justify"} variant="body1" component="p">
                     {content.placeDetails.introduction_text}
                 </Typography>
 
@@ -204,7 +229,7 @@ export default function HomePage() {
                     {content.placeDetails.old_photos}
                 </Typography>
                 <div className={classes.imageRoot}>
-                    <Gallery photos={photos} onClick={openLightbox} />
+                    <Gallery photos={photos} onClick={openLightbox}/>
                     <ModalGateway>
                         {viewerIsOpen ? (
                             <Modal onClose={closeLightbox}>
@@ -242,23 +267,24 @@ export default function HomePage() {
                 <List>
                     {
                         content && content.placeDetails && content.placeDetails.reviews &&
-                            content.placeDetails.reviews.map((data,index)=>(
-                                <React.Fragment>
-                                    <ListItem alignItems="flex-start" >
-                                        <ListItemAvatar>
-                                            <Avatar
-                                                title={"A"}/>
-                                        </ListItemAvatar>
-                                        <ListItemText
-                                            primary={data.review}
-                                            secondary={
-                                                <Rating style={{fontSize:"1rem",marginTop:8}} name="read-only" value={data.rating} readOnly />
-                                            }
-                                        />
-                                    </ListItem>
-                                    <Divider variant="inset" component="li" />
-                                </React.Fragment>
-                            ))
+                        content.placeDetails.reviews.map((data, index) => (
+                            <React.Fragment>
+                                <ListItem alignItems="flex-start">
+                                    <ListItemAvatar>
+                                        <Avatar
+                                            title={"A"}/>
+                                    </ListItemAvatar>
+                                    <ListItemText
+                                        primary={data.review}
+                                        secondary={
+                                            <Rating style={{fontSize: "1rem", marginTop: 8}} name="read-only"
+                                                    value={data.rating} readOnly/>
+                                        }
+                                    />
+                                </ListItem>
+                                <Divider variant="inset" component="li"/>
+                            </React.Fragment>
+                        ))
                     }
                 </List>
             </Paper>
@@ -312,6 +338,7 @@ export default function HomePage() {
                                     ))
                                 }
                             </List> :
+
                             audio !== "" ? <audio autoPlay controls style={{width: "100%", height: 40}}>
                                 <source src={audio} type="audio/mp3"/>
                                 Your browser does not support the audio element.
