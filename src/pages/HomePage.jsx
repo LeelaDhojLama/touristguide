@@ -122,6 +122,7 @@ export default function HomePage() {
 
     useEffect(() => {
         dispatch(contentActions.getIntroduction());
+        setSpeechToTextLanguage();
         onLanguageChange();
     }, []);
 
@@ -147,6 +148,11 @@ export default function HomePage() {
 
     const handleLanguageSelection = (language) => {
         localStorage.setItem("language", language);
+        setSpeechToTextLanguage();
+        dispatch(contentActions.getIntroduction());
+    }
+
+    const setSpeechToTextLanguage = () =>{
         if (localStorage.getItem("language") === "en") {
             setVoiceIndex(49);
         } else if (localStorage.getItem("language") === "hi") {
@@ -154,7 +160,6 @@ export default function HomePage() {
         } else if (localStorage.getItem("language") === "jp") {
             setVoiceIndex(58);
         }
-        dispatch(contentActions.getIntroduction());
     }
 
     const handleCheapSelect = (chip) => {
